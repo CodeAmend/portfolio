@@ -20,13 +20,13 @@
 
    <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-   <link rel="stylesheet" href="css/normalize.css">
-   <link rel="stylesheet" href="css/skeleton.css">
+   <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
    <link rel="stylesheet" href="css/custom.css">
 
    <!-- Scripts
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-   <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
+   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+   <script src="semantic/dist/semantic.min.js"></script>
 
    <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -49,21 +49,108 @@
 
 
    <main id="hero">
-      <div class="container centered">
-         <h1>Michael Bruce Allen</h1>
-         <a href="" class="button">View Resume</a>
+      <!-- <div class="container"> -->
+
+      <h1>Michael Bruce Allen</h1>
+      <hr>
+      <p class="tagline">I develop web software...</p>
+      <div class="ui container">
+         <div class="ui three column stackable grid">
+
+            <div class="column">
+               <button class="ui button">
+                  <i class="slack icon"></i>
+                  <a href="#projects">Projects</a>
+               </button>
+
+               <div class="ui list">
+                  <div class="item">
+                     Semantic UI
+                  </div>
+               </div>
+            </div>
+
+            <div class="column">
+               <button class="ui button">
+                  <i class="code icon"></i>
+                  <a href="#skills">Skills</a>
+               </button>
+               <div class="ui list">
+
+                  <div class="item">Node.js</div>
+                  <div class="item">React / Redux</div>
+                  <div class="item">Mongodb</div>
+                  <div class="item">Postgres</div>
+                  <div class="item">Javascript vanilla</div>
+                  <div class="item">Angular</div>
+               </div>
+            </div>
+
+            <div class="column">
+               <button class="ui button">
+                  <i class="github icon"></i>
+                  <a href="#courses">Courses</a>
+               </button>
+               <div class="ui list">
+
+                  <div class="item">Javascript: The Weird Parts</div>
+                  <div class="item">Advanced Javascript</div>
+                  <div class="item">Learn and Understand Node.js</div>
+                  <div class="item">Leanr and Understand Angular</div>
+                  <div class="item">The Complete Developers Guide To MongoDB</div>
+                  <div class="item">Modern React and Redux</div>
+                  <div class="item">Advanced React and Redux</div>
+                  <div class="item">Webpack 2: The Complete Dev Guide</div>
+                  <div class="item">Mastering CSS</div>
+                  <div class="item">SQL for Newbs: Beginner Data Analysis</div>
+                  <div class="item">Realtional Databases</div>
+
+               </div>
+            </div>
+
+         </div>
       </div>
-      <canvas id="canvas_id"></canvas>
+      <!-- <div class="four columns">
+            <h4>Projects</h4>
+            <ul>
+               <li>CanVo</li>
+               <li>CosyWasi</li>
+               <li>Old Bull Tavern</li>
+            </ul>
+         </div>
+         <div class="four columns">
+            <h4>Tools</h4>
+            <ul>
+               <li>React / Redux</li>
+               <li>Node.js</li>
+               <li>Mongodb</li>
+               <li></li>
+               <li></li>
+            </ul>
+         </div>
+         <div class="four columns">
+            <h4>Courses</h4>
+            <ul>
+               <li>Javascript: The Weird Parts</li>
+               <li>Understanding Node.js</li>
+               <li>Understanding Angular</li>
+               <li></li>
+               <li></li>
+            </ul>
+         </div> -->
+      </div>
+      <!-- <a href="" class="button">View Resume</a> -->
+      <!-- </div> -->
+      <!-- <canvas id="canvas_id"></canvas> -->
    </main>
 
 
    <!-- Profile Section
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
    <section id="profile">
-      <div class="container centered">
-         <h3>Profile</h3>
-         <p>I like ddc code</p>
+      <div class="container">
+         <h3 class="">Profile</h3>
+         <p class="">Hi! I am <strong>Michael Bruce Allen</strong></p>
          <hr>
          <div class="row">
             <div class="four columns">
@@ -85,15 +172,18 @@
                   <br>
                </p>
             </div>
+            <!-- Details -->
          </div>
+         <!-- Pic -->
       </div>
+      <!-- About -->
    </section>
 
    <!-- Experience Section
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
    <section id="experience">
-      <div class="container centered">
+      <div class="container">
          <h3>EXPERIENCE</h3>
          <p>Some text here....</p>
          <hr>
@@ -108,7 +198,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
    <section id="ability">
-      <div class="container centered">
+      <div class="container">
          <h2>Skills</h2>
          <hr>
          <div class="row">
@@ -275,7 +365,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
    <section id="projects">
-      <div class="container centered">
+      <div class="container">
          <h2>Projects</h2>
          <p>Some text...</p>
          <hr>
@@ -298,7 +388,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
    <section id="contact">
-      <div class="container centered">
+      <div class="container">
          <h2>Contact</h2>
          <p>some text...</p>
          <hr>
@@ -314,6 +404,14 @@
 
    <script src="js/CanVo.js"></script>
    <script src="js/script.js"></script>
+
+</body>
+
+</html>
+�––––––––––––––––––––––––––––––– -->
+
+<script src="js/CanVo.js"></script>
+<script src="js/script.js"></script>
 
 </body>
 
