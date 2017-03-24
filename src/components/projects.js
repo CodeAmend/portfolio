@@ -2,11 +2,11 @@ import React from 'react';
 
 const Projects = () => {
   return(
-   <section id="projects">
+    <section id="Projects">
       <h4 className="ui horizontal divider header">
-         <a href="#">Projects</a>
+           <a href="#">Projects</a>
       </h4>
-   </section>
+    </section>
   );
 };
 
