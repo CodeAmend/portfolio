@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import Projects from './components/projects';
+import Skills from './components/skills';
 
 const App = () => {
   return(
-
-    <Projects />
-    <Skills />
+    <section>
+      <Projects />
+      <Skills />
+    </section>
 
   );
 }
