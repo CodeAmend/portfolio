@@ -1,5 +1,5 @@
 $('.ui.rating')
   .rating({
-    maxRating: 10,
+    maxRating: 6,
   })
 ;
