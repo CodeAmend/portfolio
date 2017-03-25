@@ -1,36 +1,53 @@
-import React from 'react';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
-const Skills = () => {
-  return(
-    <section id="skills">
-       <h4 className="ui horizontal divider header">
-          <a href="#">Skills</a>
-       </h4>
-       <article className="ui container">
-          <div className="ui cards">
+class Skills extends Component {
 
-             <div className="card">
-                <div className="content">
-                   <a href="#" className="right floated meta">
-                      projects: 5
-                   </a>
-                   <div className="header">
-                      Node.js
-                   </div>
-                   {/* <div className="description">
-                      One of my favorite inventions...
-                   </div> */}
-                </div>
-                <div className="extra">
-                   Skill
-                   <div className="ui heart rating" data-rating="5"></div>
-                </div>
-             </div>
+  renderSkills() {
+    return this.props.skills.map((skill) => {
+      return (
 
-          </div>
-       </article>
-    </section>
-  );
-};
+        <div className="ui centered card">
+           <div className="content">
+              <a href="#" className="right floated meta">
+                 projects: 5
+              </a>
+              <div className="header">
+                 {skill.title}
+              </div>
+              {/* <div className="description">
+                 One of my favorite inventions...
+              </div> */}
+           </div>
+           <div className="extra">
+              Skill
+              <div className="ui heart rating" data-rating={skill.level}></div>
+           </div>
+        </div>
+      )
 
-export default Skills;
+    });
+  }
+  render() {
+    return(
+      <section id="skills">
+         <h4 className="ui horizontal divider header">
+            <a href="#">Skills</a>
+         </h4>
+         <article className="ui container">
+            <div className="ui four doubling cards">
+
+            {this.renderSkills()}
+
+            </div>
+         </article>
+      </section>
+    );
+  }
+}
+
+function mapStateToProps(state) {
+  return { skills: state.skills }
+}
+
+export default connect(mapStateToProps)(Skills);

@@ -1,7 +1,8 @@
 import {combineReducers} from 'redux';
+import SkillsReducer from './skills_reducer';
 
 const rootReducer = combineReducers({
-  state: []
+  skills: SkillsReducer
 })
 
 export default rootReducer;
