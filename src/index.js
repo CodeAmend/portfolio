@@ -19,5 +19,5 @@ const App = () => {
 
 ReactDOM.render(
   <Provider store={createStore(rootReducer)}>
-  <App/>
-</Provider>, document.querySelector('#react'));
+    <App/>
+  </Provider>, document.querySelector('#react'));

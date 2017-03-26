@@ -20,7 +20,7 @@ class Skills extends Component {
               </h5>
               {/* <div className="description">
                  One of my favorite inventions...
-            </div> */}
+              </div> */}
             </section>
             <aside className="extra">
               Skill
