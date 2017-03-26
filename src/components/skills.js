@@ -7,23 +7,23 @@ class Skills extends Component {
     return this.props.skills.map((skill) => {
       return (
 
-        <div className="ui centered card">
-           <div className="content">
+        <article className="ui centered card">
+           <section className="content">
               <a href="#" className="right floated meta">
                  projects: 5
               </a>
-              <div className="header">
+              <h5 className="header">
                  {skill.title}
-              </div>
+              </h5>
               {/* <div className="description">
                  One of my favorite inventions...
               </div> */}
-           </div>
-           <div className="extra">
+           </section>
+           <aside className="extra">
               Skill
-              <div className="ui heart rating" data-rating={skill.level}></div>
-           </div>
-        </div>
+              <section className="ui heart rating" data-rating={skill.level}></section>
+           </aside>
+        </article>
       )
 
     });
@@ -35,11 +35,11 @@ class Skills extends Component {
             <a href="#">Skills</a>
          </h4>
          <article className="ui container">
-            <div className="ui four doubling cards">
+            <section className="ui four doubling cards">
 
             {this.renderSkills()}
 
-            </div>
+          </section>
          </article>
       </section>
     );
