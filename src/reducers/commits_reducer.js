@@ -1,9 +1,12 @@
-export default function() {
-  return [
-    { title: "commit 1" },
-    { title: "commit 2" },
-    { title: "commit 3" },
-    { title: "commit 4" },
-    { title: "commit 5" }
-  ]
+import {FETCH_COMMITS} from '../actions/types';
+
+export default function(state = [], action) {
+  switch (action.type) {
+    case FETCH_COMMITS:
+      return [
+        ...state,
+        action.payload
+      ]
+  }
+  return state;
 }
