@@ -35,10 +35,10 @@ class Skills extends Component {
           <a href="#">Skills</a>
         </h4>
         <article className="ui container">
-          <section className="ui four doubling cards">
+          <section className="ui six doubling cards">
 
             {this.renderSkills()}
-
+            
           </section>
         </article>
       </section>
