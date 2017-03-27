@@ -6,14 +6,14 @@ describe("Commits action", () => {
 
   let action;
 
-  it("returns correct type", () => {
-    action = fetchCommits();
-    expect(action.type).to.equal(FETCH_COMMITS)
-  });
-
-  it("should return promise", () => {
-    action = fetchCommits();
-    expect(action.payload).to.be.a('promise');
-  });
+  // it("returns correct type", () => {
+  //   action = fetchCommits();
+  //   expect(action.type).to.equal(FETCH_COMMITS)
+  // });
+  //
+  // it("should return promise", () => {
+  //   action = fetchCommits();
+  //   expect(action.payload).to.be.a('promise');
+  // });
 
 });
