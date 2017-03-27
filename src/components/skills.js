@@ -4,10 +4,7 @@ import {connect} from 'react-redux';
 class Skills extends Component {
 
   renderSkills() {
-    return this
-      .props
-      .skills
-      .map((skill) => {
+    return this.props.skills.map((skill) => {
         return (
 
           <article key={skill.title} className="ui centered card">
@@ -27,10 +24,10 @@ class Skills extends Component {
               <section className="ui heart rating" data-rating={skill.level}></section>
             </aside>
           </article>
-        )
-
+        );
       });
   }
+
   render() {
     return (
       <section id="skills">

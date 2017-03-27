@@ -1,12 +1,17 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
-class Commit extends Component {
+class Commits extends Component {
+
   renderLatestGitCommits() {
-    return (
-      <p>Commit 1</p>
-    );
+    console.log(this.props);
+    return this.props.commits.map((commit) => {
+      return (
+        <div>{commit.title}</div>
+      );
+    });
   }
+
   render() {
     return (
       <article className="latest-commits">
@@ -21,4 +26,4 @@ function mapStateToProps(state) {
   return {commits: state.commits}
 }
 
-export default connect(mapStateToProps)(Commit);
+export default connect(mapStateToProps)(Commits);

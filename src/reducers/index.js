@@ -5,6 +5,6 @@ import CommitsReducer from './commits_reducer';
 const rootReducer = combineReducers({
   skills: SkillsReducer,
   commits: CommitsReducer
-})
+});
 
 export default rootReducer;
