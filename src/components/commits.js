@@ -13,15 +13,14 @@ class Commits extends Component {
     if( commits.length === 0 ) {
       return <div>Loading...</div>;
     }
-    const latestCommits = [];
-    function isCommitTheLatest(amount) {
-      
-    }
-    return this.props.commits[0].map((commit) => {
+    return commits[0].map((commit) => {
       return (
-        <div key={commit.id}>
-          <h5>{commit.name}</h5>
-          <p>{commit.pushed_at}</p>
+        <div className="item">
+          <i className="large github middle aligned icon"></i>
+          <div className="content">
+            <a className="header">{commit.name}</a>
+            <div className="description">{commit.pushed_at}</div>
+          </div>
         </div>
       );
     });
@@ -29,7 +28,7 @@ class Commits extends Component {
 
   render() {
     return (
-      <article className="latest-commits">
+      <article className="latest-commits ui ralaxed divided list">
         <h3>Latest Git Commits</h3>
         {this.renderLatestGitCommits()}
       </article>
