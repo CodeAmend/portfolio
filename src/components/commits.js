@@ -9,10 +9,20 @@ class Commits extends Component {
   }
 
   renderLatestGitCommits() {
-    console.log(this.props.commits);
-    return this.props.commits.map((commit) => {
+    const {commits} = this.props;
+    if( commits.length === 0 ) {
+      return <div>Loading...</div>;
+    }
+    const latestCommits = [];
+    function isCommitTheLatest(amount) {
+      
+    }
+    return this.props.commits[0].map((commit) => {
       return (
-        <div>{commit.title}</div>
+        <div key={commit.id}>
+          <h5>{commit.name}</h5>
+          <p>{commit.pushed_at}</p>
+        </div>
       );
     });
   }

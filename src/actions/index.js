@@ -14,8 +14,8 @@ export function fetchCommits() {
   const request = axios.get("https://api.github.com/users/codeamend/repos", null, config);
 
   return (dispatch => {
-    request.then(({data}) => {
-      dispatch({ type: FETCH_COMMITS, payload:data });
+    request.then((handledRequest) => {
+      dispatch({ type: FETCH_COMMITS, payload: handledRequest.data });
     });
   });
 
