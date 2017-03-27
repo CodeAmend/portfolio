@@ -2,7 +2,7 @@ import {expect} from '../test_helper';
 import {fetchCommits} from '../../src/actions/index';
 import {FETCH_COMMITS} from '../../src/actions/types';
 
-describe("Skills action", () => {
+describe("Commits action", () => {
 
   let action;
 
