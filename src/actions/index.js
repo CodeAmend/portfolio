@@ -11,11 +11,12 @@ export function fetchCommits() {
     }
   }
 
-  const request = axios.get("https://api.github.com/users/codeamend/repos", config);
+  const request = axios.get("https://api.github.com/users/codeamend/repos", null, config);
 
-  return {
-    type: FETCH_COMMITS,
-    payload: request
-  }
+  return (dispatch => {
+    request.then(({data}) => {
+      dispatch({ type: FETCH_COMMITS, payload:data });
+    });
+  });
 
 }
