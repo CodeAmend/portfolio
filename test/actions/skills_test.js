@@ -16,12 +16,4 @@ describe("Skills action", () => {
     expect(action.payload).to.be.a('promise');
   });
 
-  it("should return correct info", (done) => {
-    action = fetchCommits();
-    action.payload.then((response) => {
-      console.log(response);
-      done();
-    })
-  });
-
 });
