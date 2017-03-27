@@ -2,7 +2,7 @@
 import jsdom from 'jsdom';
 import _$ from 'jquery';
 import TestUtils from 'react-addons-test-utils';
-import ReactDOM from 'react';
+import ReactDOM from 'react-dom';
 import {expect} from 'chai';
 import React from 'react';
 import {Provider} from 'react-redux';
@@ -19,7 +19,7 @@ const $ = _$(global.window);
 function renderComponent(ComponentClass, props, state) {
   const componentDocument = TestUtils.renderIntoDocument(
     <Provider store={createStore(reducers, state)}>
-      <ComponentClass {..props}/>
+      <ComponentClass {...props}/>
     </Provider>
   );
 
