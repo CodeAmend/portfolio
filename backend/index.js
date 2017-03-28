@@ -1,22 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const routes = require('./routes');
 
 const app = express();
 
 app.use(bodyParser.json());
 
-app.get('/api', (req, res) => {
-  res.send({ api: "portfolio website" });
-});
-
-app.get('/skills', (req, res) => {
-  res.send({ skill: "javascript" });
-});
-
-app.get('/projects', (req, res) => {
-  res.send({ project: "project 1" });
-});
+routes(app);
 
 if (!module.parent) {
   app.listen(6464, () => {
