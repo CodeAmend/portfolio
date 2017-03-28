@@ -11,4 +11,11 @@ describe("Skills", () => {
         done();
       });
   });
+
+  it("/skills POST should save a skill", () => {
+    throw Error("not implemented");
+    // name
+    // star count
+  });
+
 });
