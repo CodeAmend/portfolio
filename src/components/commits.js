@@ -4,11 +4,8 @@ import {fetchCommits} from '../actions/index';
 
 class Commits extends Component {
 
-  componentWillMount() {
-    this.props.fetchCommits();
-  }
-
-  renderLatestGitCommits() {
+  renderLatestGitCommits(numberOfCommits) {
+    this.props.fetchCommits(numberOfCommits);
     const {commits} = this.props;
     if( commits.length === 0 ) {
       return <div>Loading...</div>;
@@ -30,7 +27,7 @@ class Commits extends Component {
     return (
       <article className="latest-commits ui ralaxed divided list">
         <h3>Latest Git Commits</h3>
-        {this.renderLatestGitCommits()}
+        {this.renderLatestGitCommits(3)}
       </article>
     );
   }
