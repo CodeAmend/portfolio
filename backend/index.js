@@ -8,9 +8,9 @@ const routes = require('./routes');
 mongoose.Promise = global.Promise;
 
 
-// if (process.env.NODE_ENV !== 'test') {
+if (process.env.NODE_ENV !== 'test') {
 mongoose.connect('mongodb://localhost/codeamend');
-// }
+}
 
 app.use(bodyParser.json());
 
