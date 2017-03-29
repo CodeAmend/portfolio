@@ -19,15 +19,15 @@ describe("Skill API", () => {
   //     });
   // });
 
-  it("/skill POST should save a skill", (done) => {
+  it("/skill POST should save a skill name", (done) => {
     request(app)
     .post('/skill')
     .send({ name: "javascript" })
     .end((err, response) => {
-      // console.log(response);
+      expect(response.status).to.eql(201);
+      expect(response.body).to.have.property('_id');
       done();
     });
-    // star count
   });
 
 });

@@ -11,8 +11,10 @@ module.exports = (app) => {
   });
 
   app.post('/skill', (req, res) => {
-    
-    res.send(req.body);
+    const skill = Skill({ name: "ajax" });
+    skill.save().then((result) => {
+      res.status(201).send(result);
+    });
   });
 
   app.get('/project', (req, res) => {
