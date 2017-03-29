@@ -1,9 +1,16 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const app = express();
+
 const routes = require('./routes');
 
-const app = express();
+mongoose.Promise = global.Promise;
+
+
+// if (process.env.NODE_ENV !== 'test') {
+mongoose.connect('mongodb://localhost/codeamend');
+// }
 
 app.use(bodyParser.json());
 
