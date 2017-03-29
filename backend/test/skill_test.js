@@ -3,22 +3,27 @@ const request = require('supertest');
 const mongoose = require('mongoose');
 const app = require('../index');
 
-// const Skill = mongoose.model('skill');
+const Skill = mongoose.model('skill');
 
-describe("Skills", () => {
-  it("/skills GET should return json", (done) => {
+describe("Skill API", () => {
+  it("/skill GET should return json", (done) => {
     request(app)
-      .get('/skills')
+      .get('/skill')
       .end((err, response) => {
-        expect(response.body).to.eql({ skill: "javascript" })
+        expect(response.body).to.eql({ skill: "javascript" });
         done();
       });
   });
 
-  // it("/skills POST should save a skill", () => {
-  //   throw Error("not implemented");
-  //   // name
-  //   // star count
-  // });
+  it("/skill POST should save a skill", (done) => {
+    request(app)
+    .post('/skill')
+    .send({ name: "javascript" })
+    .end((err, response) => {
+      expect(response.body).to.eql({ name: "javascript" });
+      done();
+    });
+    // star count
+  });
 
 });
