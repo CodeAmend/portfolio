@@ -3,7 +3,7 @@ const request = require('supertest');
 const app = require('../../index');
 
 
-describe("App", () => {
+xdescribe("App", () => {
   it("/api should return json", (done) => {
     request(app)
       .get('/api')
