@@ -11,14 +11,15 @@ module.exports = (app) => {
   });
 
   app.post('/skill', (req, res) => {
-    const skill = Skill({ name: "ajax" });
-    skill.save().then((result) => {
+    const skill = new Skill(req.body);
+    skill.save()
+    .then((result) => {
       res.status(201).send(result);
-    });
+    }, () => {});
   });
 
   app.get('/project', (req, res) => {
     res.send(res.body);
   });
 
-}
+};
