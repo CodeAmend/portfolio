@@ -7,11 +7,11 @@ const mongoose = require('mongoose');
 
 const Skill = mongoose.model('skill');
 
-describe("Skill API", () => {
+describe("Skill API /skill", () => {
 
-  it("should /skill POST & save a skill name", (done) => {
+  it("POST to /api/skill new skill name", (done) => {
     request(app)
-    .post('/skill')
+    .post('/api/skill')
     .send({ name: "javascript" })
     .end((err, response) => {
       expect(response.status).to.eql(201);

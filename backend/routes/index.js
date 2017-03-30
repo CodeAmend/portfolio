@@ -6,11 +6,11 @@ module.exports = (app) => {
     res.send({ api: "portfolio website" });
   });
 
-  app.get('/skill', (req, res) => {
+  app.get('/api/skill', (req, res) => {
     res.send({ skill: "javascript" });
   });
 
-  app.post('/skill', (req, res) => {
+  app.post('/api/skill', (req, res) => {
     const skill = new Skill(req.body);
     skill.save()
     .then((result) => {
@@ -18,7 +18,7 @@ module.exports = (app) => {
     }, () => {});
   });
 
-  app.get('/project', (req, res) => {
+  app.get('/api/project', (req, res) => {
     res.send(res.body);
   });
 
