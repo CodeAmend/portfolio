@@ -4,10 +4,26 @@ const app = require('../../index');
 
 const mongoose = require('mongoose');
 
-
 const Skill = mongoose.model('skill');
 
 describe("Skill API /skill", () => {
+
+  let skill;
+  let result;
+
+  beforeEach((done) => {
+    skill = new Skill({ name: 'Javascript' });
+    skill.save()
+    .then((savedSkill) => {
+      result = savedSkill;
+      done();
+    });
+  });
+
+  afterEach((done) => {
+    mongoose.connection.collections.skills.drop()
+    .then(() => done());
+  });
 
   it("POST to /api/skill new skill name", (done) => {
     request(app)
@@ -17,53 +33,45 @@ describe("Skill API /skill", () => {
 
       expect(response.status).to.eql(201);
       expect(response.body).to.have.property('_id');
-      
+
       done();
     });
   });
 
   it("PUT to /api/skill/:id update skill name", (done) => {
-    const skill = new Skill({ name: 'ajax' });
-    skill.save()
-    .then((result) => {
-      request(app)
-      .put(`/api/skill/${result.id}`)
-      .send({name: 'not ajax'})
-      .end((err, response) => {
+    request(app)
+    .put(`/api/skill/${result.id}`)
+    .send({name: 'Ajax'})
+    .end((err, response) => {
 
-        expect(response.status).to.eql(200);
+      expect(response.status).to.eql(200);
 
-        Skill.findOne({ _id: result.id})
-        .then((newSkill) => {
+      Skill.findOne({ _id: result.id})
+      .then((newSkill) => {
 
-          expect(newSkill.name).to.eql('not ajax');
-          expect(response.body._id).to.eql(result.id);
+        expect(newSkill.name).to.eql('Ajax');
+        expect(response.body._id).to.eql(result.id);
 
-          done();
-        });
+        done();
       });
     });
   });
 
   it("DELETE /api/skill/:id to delete record and return ", (done) => {
-    const skill = new Skill({ name: 'Node.js'});
-    skill.save()
-    .then(() => {
-      request(app)
-      .delete(`/api/skill/${skill.id}`)
-      .end((err, response) => {
+    request(app)
+    .delete(`/api/skill/${skill.id}`)
+    .end((err, response) => {
 
-        expect(response.status).to.eql(200);
-        expect(response.body).to.eql({ message: 'Deleted!' });
+      expect(response.status).to.eql(200);
+      expect(response.body).to.eql({ message: 'Deleted!' });
 
-        Skill.findById(skill.id)
-        .then((skill) => {
+      Skill.findById(skill.id)
+      .then((skill) => {
 
-          expect(skill).to.be.null;
+        expect(skill).to.be.null;
 
-        });
-        done();
       });
+      done();
     });
   });
 
