@@ -1,8 +1,12 @@
 const Skill = require('../models/skill_schema');
 
 module.exports = {
+
   index(req, res, next) {
-    res.send({ skill: "javascript" });
+    Skill.find({})
+    .then((results) => {
+      res.send(results);
+    })
   },
 
   edit(req, res, next) {

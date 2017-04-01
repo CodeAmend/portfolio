@@ -25,6 +25,16 @@ describe("Skill API /skill", () => {
     .then(() => done());
   });
 
+  it("GET to /api/skill will return all skills json", (done) => {
+    request(app)
+    .get('/api/skill')
+    .end((err, res) => {
+      expect(res.body.length).to.eql(1);
+      expect(res.body[0]).to.contain({ name: 'Javascript' });
+      done();
+    });
+  });
+
   it("POST to /api/skill new skill name", (done) => {
     request(app)
     .post('/api/skill')
