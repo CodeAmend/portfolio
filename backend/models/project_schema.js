@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const SkillSchema = Schema({
+const ProjectSchema = Schema({
   name: {
     type: String,
     unique: true,
@@ -10,6 +10,6 @@ const SkillSchema = Schema({
   }
 });
 
-const Skill = mongoose.model('skill', SkillSchema);
+const Project = mongoose.model('project', ProjectSchema);
 
-module.exports = Skill;
+module.exports = Project;
