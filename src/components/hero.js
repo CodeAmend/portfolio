@@ -24,7 +24,7 @@ const Hero = () => {
 
             <section className="row">
               <article className="column">
-                <h1>Michael Bruce Allen</h1>
+                <h1>Michael Bruce Allen </h1>
                 <p>I have a strong interest to build booking systems, schedulars and social connection apps. Yeah! Stuff like that!</p>
                 <p>I am a novice but...</p>
                 <p>Here is what I am doing to get me to the next level.</p>
